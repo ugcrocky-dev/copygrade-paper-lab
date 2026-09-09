@@ -1,0 +1,15 @@
+[Unit]
+Description=CopyGrade Paper Lab (do not use Paper Lab :3010)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/copygrade-paper-lab
+Environment=PORT=3011
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/npm run start
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
